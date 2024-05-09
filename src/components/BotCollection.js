@@ -1,12 +1,18 @@
 import React from "react";
-
-function BotCollection() {
+import BotSpecs from "./BotSpecs";
+import SingleBot from "./SingleBot";
+function BotCollection(props) {
   // Your code here
+  const { bots } = props;
+  const addToArmy = (bot) => {};
   return (
     <div className="ui four column grid">
       <div className="row">
         {/*...and here..*/}
         Collection of all bots
+        {bots.map((bot) => {
+          return <SingleBot key={bot.id} bot={bot} />;
+        })}
       </div>
     </div>
   );
