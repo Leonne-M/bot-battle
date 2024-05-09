@@ -1,17 +1,27 @@
 import React from "react";
 import BotSpecs from "./BotSpecs";
 import SingleBot from "./SingleBot";
+
 function BotCollection(props) {
-  // Your code here
-  const { bots } = props;
-  const addToArmy = (bot) => {};
+  const { bots, setClickedBot } = props;
+
+  const addToArmy = (bot) => {
+    setClickedBot(bot);
+  };
+
   return (
     <div className="ui four column grid">
       <div className="row">
-        {/*...and here..*/}
-        {bots.map((bot) => {
-          return <SingleBot key={bot.id} bot={bot} />;
-        })}
+        {bots.map((bot) => (
+          <div
+            key={bot.id} // Key should be on the outermost element inside map function
+            onClick={() => {
+              addToArmy(bot);
+            }}
+          >
+            <SingleBot bot={bot} />
+          </div>
+        ))}
       </div>
     </div>
   );
