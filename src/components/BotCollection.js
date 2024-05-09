@@ -9,7 +9,6 @@ function BotCollection(props) {
     <div className="ui four column grid">
       <div className="row">
         {/*...and here..*/}
-        Collection of all bots
         {bots.map((bot) => {
           return <SingleBot key={bot.id} bot={bot} />;
         })}
