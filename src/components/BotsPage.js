@@ -6,7 +6,7 @@ import EnlistSection from "./EnlistSection";
 function BotsPage() {
   //start here with your code for step one
   const [bots, setBots] = useState([]);
-  const [army, setArmy] = useState();
+  const [army, setArmy] = useState([]);
   const [clickedBot, setClickedBot] = useState(null);
 
   useEffect(() => {
@@ -25,7 +25,12 @@ function BotsPage() {
   return (
     <div>
       <YourBotArmy army={army} setArmy={setArmy} />
-      <EnlistSection clickedBot={clickedBot} setClickedBot={setClickedBot} />
+      <EnlistSection
+        clickedBot={clickedBot}
+        setClickedBot={setClickedBot}
+        army={army}
+        setArmy={setArmy}
+      />
       <BotCollection bots={bots} setClickedBot={setClickedBot} />
     </div>
   );
