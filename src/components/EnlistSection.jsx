@@ -6,10 +6,11 @@ function EnlistSection(props) {
     console.log("enlist");
     for (let i = 0; i < army.length; i++) {
       let bot = army[i];
-      if (bot.id === clickedBot.id) {
+      if (bot.id === clickedBot.id || bot.bot_class === clickedBot.bot_class) {
         return;
       }
     }
+    console.log(army);
     let newArmy = army;
     newArmy.push(clickedBot);
     setClickedBot(null);
